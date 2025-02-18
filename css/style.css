@@ -1,0 +1,163 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 1.4;
+	color: #153236;
+	background-color: #FFF;
+}
+
+
+h1,
+p,
+ul {
+	margin: 0;
+}
+
+.container {
+	max-width: 1324px;
+	margin: 0 auto;
+	padding: 0 72px;
+}
+
+.header {
+	padding: 20px 0;
+}
+
+.header__container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header__logo {
+	display: block;
+}
+
+.header__phone {
+	padding-left: 29px;
+	font-weight: 700;
+	color: #000;
+	text-decoration: none;
+	background-image: url("../image/call.svg");
+	background-repeat: no-repeat;
+	background-position: left;
+}
+
+.hero__container {
+	display: flex;
+	justify-content: space-between;
+	gap: 72px;
+}
+
+.hero__content {
+	max-width: 480px;
+	padding-top: 85px;
+}
+
+.hero__title {
+	margin-bottom: 20px;
+	font-weight: 900;
+	font-size: 54px;
+	line-height: 1.2;
+}
+
+.hero__subtitle {
+	font-family: Arial, sans-serif;
+	font-weight: 400;
+	font-size: 40px;
+}
+
+.hero__description {
+	max-width: 380px;
+	margin-bottom: 50px;
+}
+
+.hero__button {
+	margin-bottom: 110px;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 1.4;
+	color: #000;
+	border-radius: 40px;
+	padding: 24px 57px;
+	background-color: #9CEEF9;
+	border: 1px solid #8EECF9;
+	box-shadow: 0 16px 16px 0 #c2f8ff;
+	cursor: pointer;
+}
+
+.hero__button:hover {
+	background-color: #8BE3EF;
+}
+
+.hero__button:focus {
+	background-color: #59D7E9;
+}
+
+.hero__button:active {
+	background-color: #9ceef9;
+}
+
+.hero__languages {
+	display: grid;
+	grid-template-columns: repeat(3, min-content);
+	gap: 9px 35px;
+	padding-left: 0;
+	list-style: none;
+}
+
+.hero__language {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.hero__language::before {
+	content: '';
+	display: block;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+}
+
+.hero__language_yellow::before {
+	background-color: #FFC700;
+}
+
+.hero__language_blue::before {
+	background-color: #0066FF;
+}
+
+.hero__language_red::before {
+	background-color: #FF0000;
+}
+
+.hero__language_pink::before {
+	background-color: #DB00FF;
+}
+
+.hero__language_powder::before {
+	background-color: #DE7BAB;
+}
+
+.hero__language_green::mbefore {
+	background-color: #05FF00;
+}
+
+.hero__girl {
+	align-self: flex-end;
+	font-size: 0;
+}
+
+.hero__girl-img {}
