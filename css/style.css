@@ -9,6 +9,7 @@ html {
 }
 
 body {
+	min-width: 320px;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: 400;
 	font-size: 18px;
@@ -22,6 +23,11 @@ h1,
 p,
 ul {
 	margin: 0;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
 }
 
 .container {
@@ -52,6 +58,17 @@ ul {
 	background-image: url("../image/call.svg");
 	background-repeat: no-repeat;
 	background-position: left;
+	transition: color 0.2s ease-in-out;
+}
+
+.header__phone:hover {
+	color: #59D7E9;
+}
+
+.header__phone:focus {
+	color: #59D7E9;
+	outline-offset: 5px;
+	outline-color: #59D7E9;
 }
 
 .hero__container {
@@ -61,21 +78,36 @@ ul {
 }
 
 .hero__content {
-	max-width: 480px;
+	flex-basis: 480px;
 	padding-top: 85px;
+	padding-bottom: 150px;
+}
+
+.hero__container::after {
+	content: "";
+	flex-grow: 1;
+	background-image: url("../image/girl.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 
 .hero__title {
-	margin-bottom: 20px;
+	margin-bottom: 26px;
+}
+
+.hero__title-strong {
+	font-family: "Arial Black";
 	font-weight: 900;
 	font-size: 54px;
 	line-height: 1.2;
 }
 
 .hero__subtitle {
-	font-family: Arial, sans-serif;
+	display: block;
 	font-weight: 400;
 	font-size: 40px;
+	line-height: 1;
 }
 
 .hero__description {
@@ -84,29 +116,45 @@ ul {
 }
 
 .hero__button {
+	max-width: 380px;
+	width: 100%;
+	height: 73px;
+	padding: 10px;
 	margin-bottom: 110px;
 	font-weight: 700;
-	font-size: 18px;
+	font-size: inherit;
 	line-height: 1.4;
 	color: #000;
 	border-radius: 40px;
-	padding: 24px 57px;
 	background-color: #9CEEF9;
 	border: 1px solid #8EECF9;
 	box-shadow: 0 16px 16px 0 #c2f8ff;
 	cursor: pointer;
+	transition-property: background-color;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-in-out;
 }
 
-.hero__button:hover {
-	background-color: #8BE3EF;
+@media (hover: hover) {
+	.hero__button:hover {
+		background-color: #8BE3EF;
+	}
 }
 
-.hero__button:focus {
-	background-color: #59D7E9;
+.hero__button:focus-visible {
+	border-color: #59D7E9;
+	outline: none;
 }
 
 .hero__button:active {
-	background-color: #9ceef9;
+	box-shadow: 0 6px 16px 0 #c2f8ff;
+}
+
+.hero__button:disabled {
+	background-color: #d7d7d7;
+	border-color: #d7d7d7;
+	box-shadow: none;
+	cursor: default;
 }
 
 .hero__languages {
@@ -151,13 +199,126 @@ ul {
 	background-color: #DE7BAB;
 }
 
-.hero__language_green::mbefore {
+.hero__language_green::before {
 	background-color: #05FF00;
 }
 
-.hero__girl {
-	align-self: flex-end;
-	font-size: 0;
+@media (max-width: 1200px) {
+	.hero__container {
+		gap: 56px;
+	}
+
+	.hero__content {
+		flex-basis: 410px;
+		padding-top: 25px;
+		padding-bottom: 126px;
+	}
+
+	.hero__container::after {
+		background-image: url("../image/girl-laptop.png");
+	}
+
+	.hero__title {
+		margin-bottom: 26px;
+	}
+
+	.hero__button {
+		margin-bottom: 80px;
+	}
 }
 
-.hero__girl-img {}
+@media (max-width: 1000px) {
+	body {
+		font-size: 14px;
+	}
+
+	.container {
+		padding: 0 44px;
+	}
+
+	.header__container {
+		min-height: 25px;
+	}
+
+	.header__phone {
+		padding-left: 26px;
+
+	}
+
+	.hero__container {
+		gap: 42px;
+	}
+
+	.hero__container::after {
+		background-image: url("../image/girl-tablet.png");
+	}
+
+	.hero__content {
+		flex-basis: 280px;
+		padding-top: 15px;
+		padding-bottom: 88px;
+	}
+
+	.hero__title {
+		margin-bottom: 18px;
+	}
+
+	.hero__title-strong {
+		font-size: 30px;
+	}
+
+	.hero__subtitle {
+		font-size: 24px;
+	}
+
+	.hero__description {
+		margin-bottom: 30px;
+	}
+
+	.hero__button {
+		height: 50px;
+		margin-bottom: 40px;
+	}
+
+	.hero__languages {
+		grid-template-columns: repeat(2, min-content);
+		gap: 10px 36px;
+	}
+}
+
+@media (max-width: 700px) {
+	.container {
+		padding: 0 20px;
+	}
+
+	.header__logo {
+		width: 100px;
+	}
+
+	.hero__container {
+		gap: 15px;
+	}
+
+	.hero__container::after {
+		flex-basis: 245px;
+		background-image: url("../image/girl-mobile.png");
+		background-position: right bottom;
+	}
+
+	.hero__content {
+		max-width: 280px;
+		align-self: center;
+		padding-bottom: 5px;
+		padding-bottom: 0;
+	}
+
+	.hero__title-strong {
+		margin-bottom: 4px;
+	}
+}
+
+@media (max-width: 700px) {
+	.hero__container {
+		flex-direction: column;
+	}
+}
