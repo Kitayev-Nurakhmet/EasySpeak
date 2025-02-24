@@ -4,9 +4,12 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Easy Speak - школа иностранных языков</title>
+
  <link rel="stylesheet" href="css/normalize.css">
  <link rel="stylesheet" href="css/style.css">
- <title>Easy Speak - школа иностранных языков</title>
+
+ <script src="script/script.js" defer></script>
 </head>
 
 <body>
@@ -31,7 +34,7 @@
       <p class="hero__text">Поможем преодолеть языковой барьер уже&nbsp;за&nbsp;3&nbsp;месяца обучения</p>
      </div>
 
-     <button class="hero__button">Записаться на пробный урок</button>
+     <button class="hero__button main-button">Записаться на пробный урок</button>
 
      <ul class="hero__languages">
       <li class="hero__language hero__language_yellow">Английский</li>
@@ -46,6 +49,41 @@
    </div>
   </section>
  </main>
+
+ <div class="modal">
+  <div class="modal__body">
+   <h2 class="modal__title">Заполните форму и&nbsp;мы&nbsp;свяжемся с&nbsp;вами!</h2>
+   <p class="modal__description">Наш специалист перезвонит вам в&nbsp;течении 1&nbsp;часа</p>
+
+   <form class="modal__form form">
+    <fieldset class="form__fieldset">
+     <label class="form__label">
+      <span class="form__label-text">Имя</span>
+      <input class="form__input" type="text" name="name">
+     </label>
+
+     <label class="form__label">
+      <span class="form__label-text">Фамилия</span>
+      <input class="form__input" type="text" name="surname">
+     </label>
+
+     <label class="form__label">
+      <span class="form__label-text">Телефон</span>
+      <input class="form__input" type="text" name="phone">
+     </label>
+    </fieldset>
+
+    <button class="main-button form__submit" type="submit">Записаться на пробный урок</button>
+   </form>
+
+   <button class="modal__close" type="button">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+     <path
+      d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" />
+    </svg>
+   </button>
+  </div>
+ </div>
 </body>
 
 </html>
